@@ -49,7 +49,7 @@ function Logo() {
 function WorkspaceSwitcher() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
-  const ws = WORKSPACES[active];
+  const ws = WORKSPACES[active] ?? WORKSPACES[0]!;
   return (
     <div className="relative">
       <button
@@ -85,7 +85,7 @@ function WorkspaceSwitcher() {
   );
 }
 
-function NavList({ onNavigate }: { onNavigate?: () => void }) {
+function NavList({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   const path = useRouterState({ select: (s) => s.location.pathname });
   return (
     <nav className="space-y-0.5">
@@ -119,7 +119,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarBody({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarBody({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col gap-6 px-3 py-4">
       <div className="px-2 pt-1"><Logo /></div>
