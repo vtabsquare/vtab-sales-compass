@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture
+- App shell (sidebar, topbar, PageHeader, ComingSoon) lives in src/components/app-shell.tsx and wraps <Outlet /> in __root; new modules reuse it for consistency.
+- Design tokens (colors, fonts, shadows, motion utilities) live only in src/styles.css.
