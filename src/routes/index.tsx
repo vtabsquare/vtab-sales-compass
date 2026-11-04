@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 
 const RANGES = ["7D", "30D", "90D"] as const;
 const series: Record<(typeof RANGES)[number], { d: string; v: number }[]> = {
-  "7D": [38, 44, 41, 52, 58, 55, 64].map((v, i) => ({ d: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][i], v })),
+  "7D": [38, 44, 41, 52, 58, 55, 64].map((v, i) => ({ d: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][i] ?? "", v })),
   "30D": [120, 132, 128, 150, 162, 158, 176, 190, 184, 205].map((v, i) => ({ d: `W${i + 1}`, v })),
   "90D": [310, 340, 330, 380, 420, 410, 470, 520, 505, 560, 610, 640].map((v, i) => ({ d: `W${i + 1}`, v })),
 };
