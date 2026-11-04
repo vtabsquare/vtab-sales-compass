@@ -73,9 +73,9 @@ function Dashboard() {
       />
 
       {/* KPI strip — one surface, divided, not four cards */}
-      <section className="surface mt-12 grid grid-cols-2 divide-border lg:grid-cols-4 lg:divide-x [&>*:nth-child(odd)]:border-r lg:[&>*:nth-child(odd)]:border-r-0 [&>*:nth-child(-n+2)]:border-b lg:[&>*:nth-child(-n+2)]:border-b-0">
+      <section className="surface mt-12 grid grid-cols-2 gap-px overflow-hidden bg-border lg:grid-cols-4">
         {KPIS.map((k, i) => (
-          <div key={k.label} className="animate-rise group p-5 transition-colors hover:bg-subtle md:p-6" style={{ animationDelay: `${120 + i * 70}ms` }}>
+          <div key={k.label} className="animate-rise group bg-card p-5 transition-colors hover:bg-subtle md:p-6" style={{ animationDelay: `${120 + i * 70}ms` }}>
             <div className="text-[12.5px] text-muted-foreground">{k.label}</div>
             <div className="mt-3 text-[28px] font-medium tracking-[-0.03em] tabular-nums md:text-[32px]">{k.value}</div>
             <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[11.5px] font-medium text-success">
